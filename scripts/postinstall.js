@@ -2,7 +2,7 @@
 
 var path = require("path"),
     fs   = require("fs"),
-    pkg  = require(path.join(__dirname, "..", "package.json"));
+    pkg  = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "package.json")));
 
 // check version scheme used by dependents
 if (!pkg.versionScheme)
